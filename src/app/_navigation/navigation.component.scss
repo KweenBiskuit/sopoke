@@ -1,0 +1,16 @@
+nav {
+    font-family: 'Pacifico', cursive;
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    font-size: 27px;
+    li {
+        a{
+            text-decoration: none;
+            color: #23c6e2
+        }
+    }
+  }
+}

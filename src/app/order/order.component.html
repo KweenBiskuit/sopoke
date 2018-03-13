@@ -1,0 +1,44 @@
+<div class="container" *ngIf="!validateOrder">
+  <form class="col-sm-8">
+    <div class="form-group">
+      <label for="firstname">Prénom</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Prénom</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname">
+    </div>
+    <div class="form-group">
+      <label for="address">Adresse</label>
+      <input type="text" class="form-control" id="address" name="address" [(ngModel)]="user.address">
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.city">
+    </div>
+
+    <button type="submit" (click)="validate()" class="btn btn-primary">Commander</button>
+  </form>
+
+  <!-- --------------------------- -->
+
+  <div class="col-sm-2" id="panier" style="border: 1px solid grey">
+    Panier
+    <div *ngFor="let item of panier.items ; let i = index">
+      <ul>
+        <li>
+          {{ item.title }} - {{ item.price }}
+        </li>
+      </ul>
+    </div>
+    <hr>
+    <p>total : {{ panier.total }}</p>
+
+    <button [disabled]="panier.items.length === 0" (click)="validate()">COMMANDER</button>
+  </div>
+</div>
+
+
+<div *ngIf="validateOrder">
+  Votre commande a été validée !
+</div>

@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  margin: 0px;
+  text-align: center;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 125px;
+  text-align: center;
+  background-color: #ffc50005;  
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px;
+  /* Vertically center the text there */
+  background-color: #bdf9e9;
+}
+
+/* Custom page CSS
+  -------------------------------------------------- */
+
+/* Not required for template or sticky footer method. */
+
+body>.container {
+  padding: 60px 15px 50px;;
+}
+
+.footer>.container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}

@@ -1,0 +1,26 @@
+#container, #panier, .menu-item{
+    display: inline-block;
+    vertical-align: top;
+}
+
+#container{
+    width:70%;
+    .menu-item{
+        display: inline-block;
+        text-align: center;
+        width: 45%;
+        margin-top:30px;
+        img{
+            width: 400px;
+        }
+        div{
+            background-color: rgb(169, 221, 208);
+            margin-left: 50px;
+            width: 400px;
+        }
+    }
+}
+
+#panier{
+    width: 25%;
+}

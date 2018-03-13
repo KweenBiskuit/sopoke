@@ -1,0 +1,27 @@
+<div id="container">
+  <div class="menu-item" *ngFor="let item of items ; let i = index">
+    <h3>{{ item.title }}</h3>
+    <img src="assets/images/poke-{{i+1}}.jpg" alt="image poke">
+    <div>{{ item.price }} €
+      <button (click)="add(item)">+</button>
+    </div>
+  </div>
+</div>
+
+<!-- --------------------------- -->
+
+<div id="panier" style="border: 1px solid grey">
+  Panier
+  <div *ngFor="let item of panier.items ; let i = index">
+    <ul>
+      <li>
+        <button (click)="remove(item, i)">X</button>
+        {{ item.title }} - {{ item.price }}
+      </li>
+    </ul>
+  </div>
+  <hr>
+  <p>total : {{ panier.total }}</p>
+
+  <button [disabled]="panier.items.length === 0" (click)="order()">COMMANDER</button>
+</div>
