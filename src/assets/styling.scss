@@ -1,0 +1,60 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 125px;
+  padding-top:25px;
+  text-align: center;
+  background-color: #ffc50005;
+}
+
+#navigation {
+  font-family: 'Pacifico', cursive;
+  margin-top:20px;
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 27px;
+    li {
+      a {
+        text-decoration: none;
+        color: #23c6e2;
+        &.active-link{
+          color: #ff7800;
+        }
+      }
+
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #bdf9e9;
+}
+
+#image-presentation{
+  margin-top:50px;
+}
+
+.item-pricing{
+  background-color: #85d89a;
+  padding: 3px 0px;
+  color: white;
+  font-size: bold;
+  font-weight: bold;
+  font-size: 23px;
+  margin: 0 15px;
+}
+
+#panier{
+  margin-top: 35px;
+}

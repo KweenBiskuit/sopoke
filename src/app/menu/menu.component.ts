@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
 
@@ -12,7 +11,7 @@ export class MenuComponent implements OnInit {
     { title: 'Saumon & mangue', price: 10 },
     { title: 'Thon tropical', price: 12 },
     { title: 'Edamame et gingembre', price: 8 },
-    { title: 'Saumon, Algues, Fruit de la passion', price: 9 },
+    { title: 'Saumon Fruit de la passion', price: 9 },
   ];
 
   panier = {
@@ -20,12 +19,15 @@ export class MenuComponent implements OnInit {
     items: []
   };
 
+  commandeValide = false;
+
   constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   add(item) {
+    console.error(`Vous essayez d'ajouter ${item.title} à votre panier, mais le dev a oublié de coder cette fonctionnalité :( `);
     this.panier.items.push(item);
     this.panier.total += item.price;
   }
@@ -36,8 +38,13 @@ export class MenuComponent implements OnInit {
   }
 
   order() {
-    localStorage.setItem('order', JSON.stringify(this.panier));
-    this.router.navigate(['/order']);
+    if (this.panier.total >= 30) {
+      localStorage.setItem('order', JSON.stringify(this.panier));
+      this.commandeValide = true;
+      this.router.navigate(['/order']);
+    } else {
+      console.warn('Le montant de commande est de min 15euros !');
+    }
   }
 
 }

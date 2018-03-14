@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -13,13 +13,12 @@ import { NavigationComponent } from './_navigation/navigation.component';
 import { OrderComponent } from './order/order.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'order', component: OrderComponent },
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'home' },
 ];
-
 
 @NgModule({
   declarations: [
@@ -33,6 +32,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     [RouterModule.forRoot(routes)]
   ],
   providers: [],

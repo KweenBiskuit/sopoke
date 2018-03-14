@@ -1,41 +1,43 @@
 <div class="container" *ngIf="!validateOrder">
-  <form class="col-sm-8">
-    <div class="form-group">
-      <label for="firstname">Prénom</label>
-      <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname">
-    </div>
-    <div class="form-group">
-      <label for="lastname">Prénom</label>
-      <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname">
-    </div>
-    <div class="form-group">
-      <label for="address">Adresse</label>
-      <input type="text" class="form-control" id="address" name="address" [(ngModel)]="user.address">
-    </div>
-    <div class="form-group">
-      <label for="city">City</label>
-      <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.city">
-    </div>
+  <div class="row">
+    <form class="col-sm-8" style="margin-top:38px">
+      <div class="form-group">
+        <label for="firstname">Prénom</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Prénom</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname">
+      </div>
+      <div class="form-group">
+        <label for="address">Adresse</label>
+        <input type="text" class="form-control" id="address" name="address" [(ngModel)]="user.address">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.city">
+      </div>
+    </form>
 
-    <button type="submit" (click)="validate()" class="btn btn-primary">Commander</button>
-  </form>
+    <!-- --------------------------- -->
 
-  <!-- --------------------------- -->
-
-  <div class="col-sm-2" id="panier" style="border: 1px solid grey">
-    Panier
-    <div *ngFor="let item of panier.items ; let i = index">
-      <ul>
-        <li>
-          {{ item.title }} - {{ item.price }}
+    <div class="col-sm-4" id="panier">
+      <h4>Panier</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of panier.items ; let i = index">
+          {{ item.title }}
+          <span style="float:right">{{ item.price }} €</span>
         </li>
       </ul>
+      <hr>
+      <h3 *ngIf="panier.total > 0">Total : {{ panier.total }} €</h3>
+      <p>*le minimun de commande est de 15€ </p>
+      <button type="button" (click)="validate()" class="btn btn-success" style="margin-top:30px">Commander</button>
     </div>
-    <hr>
-    <p>total : {{ panier.total }}</p>
 
-    <button [disabled]="panier.items.length === 0" (click)="validate()">COMMANDER</button>
   </div>
+
+
 </div>
 
 
