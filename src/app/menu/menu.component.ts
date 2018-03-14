@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToasterService } from 'angular2-toaster';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-menu',
@@ -19,17 +21,15 @@ export class MenuComponent implements OnInit {
     items: []
   };
 
-  commandeValide = false;
+  commandeValide = new Observable<boolean>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private toasterService: ToasterService) { }
 
   ngOnInit() {
   }
 
   add(item) {
     console.error(`Vous essayez d'ajouter ${item.title} à votre panier, mais le dev a oublié de coder cette fonctionnalité :( `);
-    this.panier.items.push(item);
-    this.panier.total += item.price;
   }
 
   remove(item, index) {
@@ -37,14 +37,23 @@ export class MenuComponent implements OnInit {
     this.panier.total -= item.price;
   }
 
-  order() {
-    if (this.panier.total >= 30) {
-      localStorage.setItem('order', JSON.stringify(this.panier));
-      this.commandeValide = true;
-      this.router.navigate(['/order']);
+  confirmOrder() {
+    if (this.panier.total >= 50) {
+      this.validateOrder();
     } else {
-      console.warn('Le montant de commande est de min 15euros !');
+      this.popToast('warning', 'Montant minimun', 'Le montant minimun est de 15euros !');
     }
   }
+
+  validateOrder() {
+    localStorage.setItem('order', JSON.stringify(this.panier));
+    this.router.navigate(['/order']);
+  }
+
+  popToast(type, title, body) {
+    this.toasterService.pop(type, title, body);
+  }
+
+
 
 }

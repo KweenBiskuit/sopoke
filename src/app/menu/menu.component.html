@@ -13,22 +13,24 @@
       </div>
     </div>
 
-    <div class="col-sm-4" id="panier" >
+    <div class="col-sm-4" id="panier">
       <h4>Panier</h4>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let item of panier.items ; let i = index">
           <button (click)="remove(item, i)" type="button" class="btn btn-secondary" style="float:left;">X</button>
-          {{ item.title }} <span style="float:right">{{ item.price }} €</span>
+          {{ item.title }}
+          <span style="float:right">{{ item.price }} €</span>
         </li>
       </ul>
-      <div *ngIf="panier.total === 0" style="background-color: white;padding: 50px;">
-        Votre panier est vide
+      <div *ngIf="panier.items.length === 0" style="background-color: white;padding: 50px;">
+        Votre panier est vide          
       </div>
       <hr>
-      <h3 *ngIf="panier.total > 0">Total : {{ panier.total }} €</h3>
+      <h3 *ngIf="panier.items.length">Total : {{ panier.total }} €</h3>
       <p>*le minimun de commande est de 15€ </p>
-      <button [disabled]="panier.items.length === 0" (click)="order()" class="btn btn-success" style="margin-top:30px">COMMANDER</button>
+      <button [disabled]="panier.items.length === 0" (click)="confirmOrder()" class="btn btn-success" style="margin-top:30px">COMMANDER</button>
     </div>
 
   </div>
 </div>
+

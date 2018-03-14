@@ -1,13 +1,13 @@
-<div class="container" *ngIf="!validateOrder">
+<div class="container" *ngIf="!showSpinner">
   <div class="row">
     <form class="col-sm-8" style="margin-top:38px">
       <div class="form-group">
-        <label for="firstname">Prénom</label>
-        <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname">
+        <label for="lastname">Nom</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname">
       </div>
       <div class="form-group">
-        <label for="lastname">Prénom</label>
-        <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname">
+        <label for="firstname">Prénom</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname">
       </div>
       <div class="form-group">
         <label for="address">Adresse</label>
@@ -36,11 +36,14 @@
     </div>
 
   </div>
-
-
 </div>
 
+<div *ngIf="showSpinner && !orderConfirm">
+  <img src="https://cdn.shopify.com/s/files/1/2075/2531/t/2/assets/loading.gif?9993851802078641540" style="width: 109px; margin: 150px 0 50px;">
+  <p>Votre commande est en cours de validation</p> 
+</div>
 
-<div *ngIf="validateOrder">
-  Votre commande a été validée !
+<div *ngIf="orderConfirm">
+  <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png" style="width: 109px; margin: 150px 0 50px;" alt="">
+  <p>Votre commande est confirmée !</p>
 </div>

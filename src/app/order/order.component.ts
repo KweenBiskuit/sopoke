@@ -21,8 +21,8 @@ export class OrderComponent implements OnInit {
     city: ''
   };
 
-  validateOrder = false;
-
+  showSpinner = false;
+  orderConfirm = false;
 
   constructor(private router: Router, private http: HttpClient) { }
 
@@ -31,20 +31,27 @@ export class OrderComponent implements OnInit {
   }
 
   validate() {
-    this.validateOrder = true;
-    this.sendOrder().subscribe(value => {
-      console.log('after commande');
-    });
+    this.showSpinner = true;
+    this.sendOrder();
+    setTimeout(() => {
+      this.orderConfirm = true;
+    }, 3000);
   }
 
-  sendOrder(): Observable<any> {
+  sendOrder() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
     };
 
-    return this.http.post('http://adresseduserver/api', { ...this.panier, ...this.user }, httpOptions);
+    this.http.post('http://jsonplaceholder.typicode.com/posts',
+      { user: this.user, order: this.panier, time: new Date() })
+      .subscribe(
+        res => {
+          console.log(res);
+        }
+      );
   }
 
 }
