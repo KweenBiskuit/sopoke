@@ -5,8 +5,9 @@
       <div class="row">
         <div class="col-sm-6" *ngFor="let item of items ; let i = index" style="margin-top:40px">
           <h3>{{ item.title }}</h3>
-          <img src="assets/images/poke-{{i+1}}.jpg" alt="image poke" style="width:320px">
+          <img src="assets/images/poke-{{i+1}}.jpg" alt="image poke" style="width:20vw">
           <div class="item-pricing">{{ item.price }} €
+            <!-- Button ajouter au panier -->
             <button (click)="add(item)" type="button" class="btn btn-secondary" style="float:right;">+</button>
           </div>
         </div>
@@ -28,6 +29,7 @@
       <hr>
       <h3 *ngIf="panier.items.length">Total : {{ panier.total }} €</h3>
       <p>*le minimun de commande est de 15€ </p>
+      <!-- Button valider commande -->
       <button [disabled]="panier.items.length === 0" (click)="confirmOrder()" class="btn btn-success" style="margin-top:30px">COMMANDER</button>
     </div>
 

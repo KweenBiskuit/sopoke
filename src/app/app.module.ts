@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { NavigationComponent } from './_navigation/navigation.component';
 import { OrderComponent } from './order/order.component';
 
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'menu', component: MenuComponent },
