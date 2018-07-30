@@ -1,18 +1,11 @@
-// TODO footer : color  #ffc50005
-.footer {
-  // background-color: #bdf9e9;
-}
-
-.body{
-  // text-align: center;
-}
-
-// TODO : mettre le nouveau logo
+// TODO medium center tout le contenu du site 
+// TODO medium footer de couleur #bdf9e9
+// TODO medium activer le nouveau logo
+// TODO medium navigation style pas appliqué, pourquoi ?
 #logo {
   // background-image: url('./images/logo.png');
 }
 
-// TODO : navigation style
 #navigation {
   font-family: 'Pacifico', cursive;
   ul {
@@ -20,7 +13,7 @@
     li {
       a {
         color: #23c6e2;
-        &.active-link{
+        &.active-link {
           color: #ff7800;
         }
       }

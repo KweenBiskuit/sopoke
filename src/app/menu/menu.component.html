@@ -24,15 +24,14 @@
         </li>
       </ul>
       <div *ngIf="panier.items.length === 0" style="background-color: white;padding: 50px;">
-        Votre panier est vide          
+        Votre panier est vide
       </div>
       <hr>
       <h3 *ngIf="panier.items.length">Total : {{ panier.total }} €</h3>
       <p>*le minimun de commande est de 15€ </p>
       <!-- Button valider commande -->
-      <button [disabled]="panier.items.length === 0" (click)="confirmOrder()" class="btn btn-success" style="margin-top:30px">COMMANDER</button>
+      <button [disabled]="panier.items.length === 0" (click)="order()" class="btn btn-success" style="margin-top:30px">COMMANDER</button>
     </div>
 
   </div>
 </div>
-

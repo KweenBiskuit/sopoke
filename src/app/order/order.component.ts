@@ -45,8 +45,14 @@ export class OrderComponent implements OnInit {
       })
     };
 
+    const requestObject = {
+      user: this.user,
+      order: this.panier,
+      time: new Date()
+    };
+
     this.http.post('http://jsonplaceholder.typicode.com/posts',
-      { user: this.user, order: this.panier, time: new Date() })
+      requestObject)
       .subscribe(
         res => {
           console.log(res);

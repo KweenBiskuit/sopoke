@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class MenuComponent implements OnInit {
 
-  // FIXME : ajouter au panier ne fonctionne pas
+  // FIXME : high ! ajouter au panier ne fonctionne pas
 
   items = [
     { title: 'Saumon & concombre', price: 10 },
@@ -31,9 +31,7 @@ export class MenuComponent implements OnInit {
   }
 
   add(item) {
-    this.panier.items.push(item);
-    this.panier.total += item.price;
-    // console.error(`Vous essayez d'ajouter ${item.title} à votre panier, mais le dev a oublié de coder cette fonctionnalité :( `);
+    console.error(`Vous essayez d'ajouter ${item.title} à votre panier, mais le dev a oublié de coder cette fonctionnalité :( `);
   }
 
   remove(item, index) {
@@ -41,8 +39,8 @@ export class MenuComponent implements OnInit {
     this.panier.total -= item.price;
   }
 
-  confirmOrder() {
-    if (this.panier.total >= 15) {
+  order() {
+    if (this.panier.total >= 50) {
       this.validateOrder();
     } else {
       this.popToast('warning', 'Montant minimun', 'Le montant minimun est de 15euros !');
