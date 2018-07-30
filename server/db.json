@@ -1,0 +1,8 @@
+{
+  "pokeballs": [
+    { "id": 0, "title": "Saumon & concombre", "price": 10, "stock": 4 },
+    { "id": 1, "title": "Thon tropical spicy", "price": 12, "stock": 2  },
+    { "id": 2, "title": "Saumon Fruit de la passion", "price": 9, "stock": 4  },
+    { "id": 3, "title": "Edamame & gingembre", "price": 8, "stock": 4  }
+  ]
+}

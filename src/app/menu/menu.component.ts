@@ -8,14 +8,13 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './menu.component.html'
 })
 export class MenuComponent implements OnInit {
-
   // FIXME : high ! ajouter au panier ne fonctionne pas
 
   items = [
-    { title: 'Saumon & concombre', price: 10 },
-    { title: 'Thon tropical spicy', price: 12 },
-    { title: 'Saumon Fruit de la passion', price: 9 },
-    { title: 'Edamame & gingembre', price: 8 },
+    { id: 0, title: 'Saumon & concombre', price: 10 },
+    { id: 1, title: 'Thon tropical spicy', price: 12 },
+    { id: 2, title: 'Saumon Fruit de la passion', price: 9 },
+    { id: 3, title: 'Edamame & gingembre', price: 8 }
   ];
 
   panier = {
@@ -25,13 +24,16 @@ export class MenuComponent implements OnInit {
 
   commandeValide = new Observable<boolean>();
 
-  constructor(private router: Router, private toasterService: ToasterService) { }
+  constructor(private router: Router, private toasterService: ToasterService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   add(item) {
-    console.error(`Vous essayez d'ajouter ${item.title} à votre panier, mais le dev a oublié de coder cette fonctionnalité :( `);
+    console.error(
+      `Vous essayez d'ajouter ${item.title} à votre panier, mais le dev a oublié de coder cette fonctionnalité :( `
+    );
+    this.panier.items.push(item);
+    this.panier.total += item.price;
   }
 
   remove(item, index) {
@@ -55,7 +57,4 @@ export class MenuComponent implements OnInit {
   popToast(type, title, body) {
     this.toasterService.pop(type, title, body);
   }
-
-
-
 }

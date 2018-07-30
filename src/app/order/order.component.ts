@@ -8,7 +8,6 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './order.component.html'
 })
 export class OrderComponent implements OnInit {
-
   panier = {
     total: 0,
     items: []
@@ -24,7 +23,7 @@ export class OrderComponent implements OnInit {
   showSpinner = false;
   orderConfirm = false;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit() {
     this.panier = JSON.parse(localStorage.getItem('order'));
@@ -51,13 +50,8 @@ export class OrderComponent implements OnInit {
       time: new Date()
     };
 
-    this.http.post('http://jsonplaceholder.typicode.com/posts',
-      requestObject)
-      .subscribe(
-        res => {
-          console.log(res);
-        }
-      );
+    this.http.post('http://localhost:3333/pokeballs', requestObject).subscribe(res => {
+      console.log(res);
+    });
   }
-
 }
