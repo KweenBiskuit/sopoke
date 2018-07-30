@@ -18,6 +18,7 @@ server.use((req, res, next) => {
   next();
 });
 
+// SERVER RESPONSE
 router.render = (req, res) => {
   console.log('---- POKEBALLS FOUND ON DATABASES ----');
   console.log(res.locals.data);
@@ -36,7 +37,7 @@ router.render = (req, res) => {
   if (validRequest) {
     res.status(200).jsonp('Order is OK ! ');
   } else {
-    res.status(400).jsonp({
+    res.status(410).jsonp({
       error: 'We are out of stock !'
     });
   }
