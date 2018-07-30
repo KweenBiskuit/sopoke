@@ -20,7 +20,7 @@ server.use((req, res, next) => {
 
 // SERVER RESPONSE
 router.render = (req, res) => {
-  console.log('---- POKEBALLS FOUND ON DATABASES ----');
+  console.log('---- POKEBOWLS FOUND ON DATABASES ----');
   console.log(res.locals.data);
   console.log('--------------------------------------');
   console.log('-------- ORDERED ITEMS BY ID --------');

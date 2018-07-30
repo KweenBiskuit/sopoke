@@ -1,4 +1,6 @@
-<div class="container" *ngIf="!showSpinner">
+<navigation></navigation>
+
+<div class="container" *ngIf="!showSpinner && !orderConfirm && !errorsHappen">
   <div class="row">
     <form class="col-sm-8" style="margin-top:38px">
       <div class="form-group">
@@ -38,7 +40,7 @@
   </div>
 </div>
 
-<div *ngIf="showSpinner && !orderConfirm">
+<div *ngIf="showSpinner">
   <img src="https://cdn.shopify.com/s/files/1/2075/2531/t/2/assets/loading.gif?9993851802078641540" style="width: 109px; margin: 150px 0 50px;">
   <p>Votre commande est en cours de validation</p>
 </div>
@@ -48,3 +50,11 @@
     alt="">
   <p>Votre commande est confirmée !</p>
 </div>
+
+<div *ngIf="errorsHappen">
+  <img src="https://www.shareicon.net/data/128x128/2016/08/18/810028_close_512x512.png" style="width: 109px; margin: 150px 0 50px;"
+    alt="">
+  <p>Un problème est survenu pendant votre commande</p>
+</div>
+
+
