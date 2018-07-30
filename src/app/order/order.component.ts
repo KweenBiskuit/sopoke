@@ -53,7 +53,7 @@ export class OrderComponent implements OnInit {
     };
 
     this.http
-      .post('http://localhost:3333/pokeballs', requestObject)
+      .post('http://localhost:3333/pokebowls', requestObject)
       .pipe(catchError(this.handleError))
       .subscribe(res => {
         console.log(res);
