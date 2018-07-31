@@ -1,97 +1,85 @@
-@import 'node_modules/angular2-toaster/toaster';
-
-* {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 1.7rem;
-  line-height: 1.5;
-  color: #212529;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-// TODO medium center tout le contenu du site 
-body {
-  margin-bottom: 125px;
-  padding-top: 25px;
-  background-color: #ffc50005;
-}
-
-// TODO medium footer de couleur #bdf9e9
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-}
-
-ul{
-  list-style-type: none;
-}
-
-#image-presentation {
-  text-align: center;
-  display: block;
-  margin: auto;
-  width: 60%;
-  margin-top: 30px;
-}
-
-// TODO medium activer le nouveau logo
-#logo {
-  background: #ffffff  no-repeat;
-  background-position: center;
-  background-size: 530px;
-  width: 100%;
-  height: 130px;
-  text-align: center;
-  // background-image: url('./images/logo.png');
-}
-
-// TODO medium navigation style pas appliqué, pourquoi ?
-#navigation {
-  font-family: 'Pacifico', cursive;
-  ul {
-    font-size: 27px;
-    li {
-      a {
-        color: #23c6e2;
-        &.active-link {
-          color: #ff7800;
-        }
-      }
-    }
-  }
-}
-
-.item-pricing {
-  background-color: #85d89a;
-  padding: 3px 0px;
-  color: white;
-  font-size: bold;
-  font-weight: bold;
-  font-size: 23px;
-  margin: 0 15px;
-}
-
-#panier {
-  margin-top: 35px;
-}
-
-button.button {
-  background-color: grey;
-  color: white;
-  border: gray;
-  padding: 5px 15px;
-  &.button-blue{
-    background-color: #5cd3ee;
-  }
-  &.button-orange{
-    background-color: #ff7800 !important;
-    position: relative;
-    left: -20px;
-  }
-}
+// @import 'node_modules/angular2-toaster/toaster';
+// * {
+//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+//   font-size: 1.7rem;
+//   line-height: 1.5;
+//   color: #212529;
+// }
+// html {
+//   position: relative;
+//   min-height: 100%;
+// }
+// // TODO medium center tout le contenu du site 
+// body {
+//   margin-bottom: 125px;
+//   padding-top: 25px;
+//   background-color: #ffc50005;
+// }
+// // TODO medium footer de couleur #bdf9e9
+// .footer {
+//   position: absolute;
+//   bottom: 0;
+//   width: 100%;
+//   height: 60px;
+//   line-height: 60px;
+// }
+// ul {
+//   list-style-type: none;
+// }
+// #image-presentation {
+//   text-align: center;
+//   display: block;
+//   margin: auto;
+//   width: 60%;
+//   margin-top: 30px;
+// }
+// // TODO medium activer le nouveau logo
+// #logo {
+//   background: #ffffff no-repeat;
+//   background-position: center;
+//   background-size: 530px;
+//   width: 100%;
+//   height: 130px;
+//   text-align: center; // background-image: url('./images/logo.png');
+// }
+// // TODO medium navigation style pas appliqué, pourquoi ?
+// #navigation {
+//   font-family: 'Pacifico', cursive;
+//   ul {
+//     font-size: 27px;
+//     li {
+//       a {
+//         color: #23c6e2;
+//         &.active-link {
+//           color: #ff7800;
+//         }
+//       }
+//     }
+//   }
+// }
+// .item-pricing {
+//   background-color: #85d89a;
+//   padding: 3px 0px;
+//   color: white;
+//   font-size: bold;
+//   font-weight: bold;
+//   font-size: 23px;
+//   margin: 0 15px;
+// }
+// #panier {
+//   margin-top: 35px;
+// }
+// button.button {
+//   background-color: grey;
+//   color: white;
+//   border: gray;
+//   padding: 5px 15px;
+//   &.button-blue {
+//     background-color: #5cd3ee;
+//   }
+//   &.button-orange {
+//     background-color: #ff7800 !important;
+//     position: relative;
+//     left: -20px;
+//   }
+// }
