@@ -12,14 +12,12 @@ html {
   min-height: 100%;
 }
 
-// TODO medium center tout le contenu du site 
 body {
   margin-bottom: 125px;
   padding-top: 25px;
   background-color: #ffc50005;
 }
 
-// TODO medium footer de couleur #bdf9e9
 .footer {
   position: absolute;
   bottom: 0;
@@ -48,16 +46,25 @@ ul{
   width: 100%;
   height: 130px;
   text-align: center;
-  // background-image: url('./images/logo.png');
+  background-image: url('./images/logo.png');
+  h1{
+    display: none;
+  }
 }
 
 // TODO medium navigation style pas appliqué, pourquoi ?
 #navigation {
-  font-family: 'Pacifico', cursive;
   ul {
-    font-size: 27px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
     li {
       a {
+        align-self: auto;
+        font-size: 27px;
+        font-family: 'Pacifico', cursive;
         color: #23c6e2;
         &.active-link {
           color: #ff7800;

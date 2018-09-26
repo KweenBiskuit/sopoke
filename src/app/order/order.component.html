@@ -1,32 +1,50 @@
-<navigation></navigation>
-
-<div class="container" *ngIf="!showSpinner && !orderConfirm && !errorsHappen">
+<div class="container"
+  *ngIf="!showSpinner && !orderConfirm && !errorsHappen">
   <div class="row">
-    <form class="col-sm-8" style="margin-top:38px">
+    <form class="col-sm-8"
+      style="margin-top:38px">
       <div class="form-group">
         <label for="lastname">Nom</label>
-        <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastname">
+        <input type="text"
+          class="form-control"
+          id="lastname"
+          name="lastname"
+          [(ngModel)]="user.lastname">
       </div>
       <div class="form-group">
         <label for="firstname">Prénom</label>
-        <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstname">
+        <input type="text"
+          class="form-control"
+          id="firstname"
+          name="firstname"
+          [(ngModel)]="user.firstname">
       </div>
       <div class="form-group">
         <label for="address">Adresse</label>
-        <input type="text" class="form-control" id="address" name="address" [(ngModel)]="user.address">
+        <input type="text"
+          class="form-control"
+          id="address"
+          name="address"
+          [(ngModel)]="user.address">
       </div>
       <div class="form-group">
         <label for="city">City</label>
-        <input type="text" class="form-control" id="city" name="city" [(ngModel)]="user.city">
+        <input type="text"
+          class="form-control"
+          id="city"
+          name="city"
+          [(ngModel)]="user.city">
       </div>
     </form>
 
     <!-- --------------------------- -->
 
-    <div class="col-sm-4" id="panier">
+    <div class="col-sm-4"
+      id="panier">
       <h4>Panier</h4>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of panier.items ; let i = index">
+        <li class="list-group-item"
+          *ngFor="let item of panier.items ; let i = index">
           {{ item.title }}
           <span style="float:right">{{ item.price }} €</span>
         </li>
@@ -34,27 +52,31 @@
       <hr>
       <h3 *ngIf="panier.total > 0">Total : {{ panier.total }} €</h3>
       <p>*le minimun de commande est de 15€ </p>
-      <button type="button" (click)="validate()" class="btn btn-success" style="margin-top:30px">Commander</button>
+      <button type="button"
+        (click)="validate()"
+        class="btn btn-success"
+        style="margin-top:30px">Commander</button>
     </div>
 
   </div>
 </div>
 
 <div *ngIf="showSpinner">
-  <img src="https://cdn.shopify.com/s/files/1/2075/2531/t/2/assets/loading.gif?9993851802078641540" style="width: 109px; margin: 150px 0 50px;">
+  <img src="https://cdn.shopify.com/s/files/1/2075/2531/t/2/assets/loading.gif?9993851802078641540"
+    style="width: 109px; margin: 150px 0 50px;">
   <p>Votre commande est en cours de validation</p>
 </div>
 
 <div *ngIf="orderConfirm">
-  <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png" style="width: 109px; margin: 150px 0 50px;"
+  <img src="http://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/sign-check-icon.png"
+    style="width: 109px; margin: 150px 0 50px;"
     alt="">
   <p>Votre commande est confirmée !</p>
 </div>
 
 <div *ngIf="errorsHappen">
-  <img src="https://www.shareicon.net/data/128x128/2016/08/18/810028_close_512x512.png" style="width: 109px; margin: 150px 0 50px;"
+  <img src="https://www.shareicon.net/data/128x128/2016/08/18/810028_close_512x512.png"
+    style="width: 109px; margin: 150px 0 50px;"
     alt="">
   <p>Un problème est survenu pendant votre commande</p>
 </div>
-
-

@@ -24,16 +24,14 @@ export class MenuComponent implements OnInit {
 
   commandeValide = new Observable<boolean>();
 
-  constructor(private router: Router, private toasterService: ToasterService) {}
+  constructor(private router: Router, private toasterService: ToasterService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   add(item) {
     console.error(
       `Vous essayez d'ajouter ${item.title} à votre panier, mais le dev a oublié de coder cette fonctionnalité :( `
     );
-    this.panier.items.push(item);
-    this.panier.total += item.price;
   }
 
   remove(item, index) {

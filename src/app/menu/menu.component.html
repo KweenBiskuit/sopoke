@@ -1,38 +1,53 @@
-<navigation></navigation>
-
 <div class="container">
   <div class="row">
 
     <div class="col-sm-8">
       <div class="row">
-        <div class="col-sm-6" *ngFor="let item of items ; let i = index" style="margin-top:40px">
+        <div class="col-sm-6"
+          *ngFor="let item of items ; let i = index"
+          style="margin-top:40px">
           <h3>{{ item.title }}</h3>
-          <img src="assets/images/poke-{{i+1}}.jpg" alt="image poke" style="width:20vw">
+          <img src="assets/images/poke-{{i+1}}.jpg"
+            alt="image poke"
+            style="width:20vw">
           <div class="item-pricing">{{ item.price }} €
             <!-- Button ajouter au panier -->
-            <button (click)="add(item)" type="button" class="button" style="float:right;">+</button>
+            <button (click)="add(item)"
+              type="button"
+              class="button"
+              style="float:right;">+</button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-sm-4" id="panier">
+    <div class="col-sm-4"
+      id="panier">
       <h4>Panier</h4>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let item of panier.items ; let i = index" style="margin-bottom:10px">
-          <button (click)="remove(item, i)" type="button" class="button button-orange" style="float:left;">X</button>
+        <li class="list-group-item"
+          *ngFor="let item of panier.items ; let i = index"
+          style="margin-bottom:10px">
+          <button (click)="remove(item, i)"
+            type="button"
+            class="button button-orange"
+            style="float:left;">X</button>
           {{ item.title }}
           <span style="float:right">{{ item.price }} €</span>
         </li>
       </ul>
-      <div *ngIf="panier.items.length === 0" style="background-color: white;padding: 50px;">
+      <div *ngIf="panier.items.length === 0"
+        style="background-color: white;padding: 50px;">
         Votre panier est vide
       </div>
       <hr>
       <h3 *ngIf="panier.items.length">Total : {{ panier.total }} €</h3>
       <p>*le minimun de commande est de 15€ </p>
       <!-- Button valider commande -->
-      <button [disabled]="panier.items.length === 0" (click)="order()" class="button button-blue" style="margin-top:30px">COMMANDER</button>
+      <button [disabled]="panier.items.length === 0"
+        (click)="order()"
+        class="button button-blue"
+        style="margin-top:30px">COMMANDER</button>
     </div>
 
   </div>

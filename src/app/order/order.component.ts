@@ -1,10 +1,8 @@
 import { ToasterService } from 'angular2-toaster';
-import { Router } from '@angular/router';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-order',
@@ -28,11 +26,10 @@ export class OrderComponent implements OnInit {
   errorsHappen = false;
 
   constructor(
-    private router: Router,
     private http: HttpClient,
     private ngZone: NgZone,
     private toasterService: ToasterService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.panier = JSON.parse(localStorage.getItem('order'));
@@ -69,7 +66,7 @@ export class OrderComponent implements OnInit {
   }
 
   handleError(error: HttpErrorResponse) {
-    this.ngZone.run(() =>{
+    this.ngZone.run(() => {
       this.errorsHappen = true;
       this.showSpinner = false;
     });
