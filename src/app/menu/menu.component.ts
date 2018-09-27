@@ -43,7 +43,7 @@ export class MenuComponent implements OnInit {
     if (this.panier.total >= 50) {
       this.validateOrder();
     } else {
-      this.popToast('warning', 'Montant minimun', 'Le montant minimun est de 15euros !');
+      this.popToast('warning', 'Montant minimun', 'Le montant minimun est de 15 euros !');
     }
   }
 
